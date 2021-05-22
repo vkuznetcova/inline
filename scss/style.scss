@@ -22,8 +22,6 @@ html, body {
 .advertising {
   background: #fafafa;
   position: absolute;
-  top: 35px;
-  right: 35px;
   right: 0;
   width: 160px;
   height: 320px;
@@ -32,6 +30,12 @@ html, body {
   align-items: center;
   color: #999999;
   font-size: 20px;
+  &-1{
+    top: 35px;
+  }
+  &-2{
+    top: 380px;
+  }
 }
 
 .container {
