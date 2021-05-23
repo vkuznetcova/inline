@@ -19,6 +19,68 @@ html, body {
   }
 }
 
+// .advertising {
+//   background: #fafafa;
+//   position: absolute;
+//   right: 0;
+//   // right: 160px;
+//   width: 160px;
+//   height: 320px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: #999999;
+//   font-size: 20px;
+//   &-1{
+//     top: 35px;
+//   }
+//   &-2{
+//     top: 380px;
+//   }
+// }
+
+.btn-up{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background: rgba(0, 95, 174, 0.75);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+  &::after,&::before{
+    display: block;
+    content: "";
+    width: 12px;
+    height: 1.5px;
+    background: #fff;
+    position: absolute;
+  }
+  &::after{
+    top: 50%;
+    left: 47%;
+    transform: rotate(40deg);
+  }
+  &::before{
+    top: 50%;
+    right: 47%;
+    transform: rotate(-40deg);
+  }
+  &:hover{
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &:active{
+    opacity: 0.32;
+  }
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  width: 1366px;
+}
 .advertising {
   background: #fafafa;
   position: absolute;
@@ -30,20 +92,13 @@ html, body {
   align-items: center;
   color: #999999;
   font-size: 20px;
+  cursor: default;
   &-1{
     top: 35px;
   }
   &-2{
     top: 380px;
   }
-}
-
-.container {
-  position: relative;
-  margin: 0 auto;
-  padding: 32px;
-  box-sizing: border-box;
-  width: 1366px;
 }
 
 .breadcrumbs {
@@ -61,6 +116,7 @@ html, body {
 
 .search {
   width: 1140px;
+  position: relative;
   &-inp{
     margin: 16px 0 32px;
     display: flex;
@@ -111,6 +167,16 @@ html, body {
       margin: 16px 0;
       display: flex;
       align-items: center;
+      &-verif{
+        display: block;
+        position: relative;
+        &:hover{
+          cursor: pointer;
+          ~.verif__open{
+            display: block;
+          }
+        }
+      }
       &-main{
         margin: 0 0 0 10px;
         font-size: 32px;
@@ -150,6 +216,39 @@ html, body {
       cursor: pointer;
       color: #fff;
       background: #00C346;
+    }
+  }
+  .verif{
+    &__open{
+      position: absolute;
+      display: none;
+      top: 150px;
+      width: 290px;
+      height: 120px;
+      background: #fff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    &-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p{
+        margin: 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #212121;
+      }
+    }
+    &-info{
+      margin: 0;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #424242;
     }
   }
 }
@@ -276,6 +375,21 @@ html, body {
       color: #212121;
       font-size: 14px;
       line-height: 20px;
+      &-desc {
+        margin: 0;
+        display: -webkit-box;
+        display: -moz-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 8;
+        overflow: hidden;
+      }
+      &-more,&-less{
+        color: $blue;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
       &-cap{
         font-weight: bold;
       }
@@ -288,4 +402,66 @@ html, body {
       }
     }
   }
+}
+
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  /* CSS */
+  
 }

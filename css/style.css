@@ -20,6 +20,59 @@ html, body {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+.btn-up {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background: rgba(0, 95, 174, 0.75);
+  -webkit-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-up::after, .btn-up::before {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 1.5px;
+  background: #fff;
+  position: absolute;
+}
+
+.btn-up::after {
+  top: 50%;
+  left: 47%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.btn-up::before {
+  top: 50%;
+  right: 47%;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+.btn-up:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn-up:active {
+  opacity: 0.32;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 1366px;
+}
+
 .advertising {
   background: #fafafa;
   position: absolute;
@@ -37,6 +90,7 @@ html, body {
           align-items: center;
   color: #999999;
   font-size: 20px;
+  cursor: default;
 }
 
 .advertising-1 {
@@ -45,15 +99,6 @@ html, body {
 
 .advertising-2 {
   top: 380px;
-}
-
-.container {
-  position: relative;
-  margin: 0 auto;
-  padding: 32px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 1366px;
 }
 
 .breadcrumbs {
@@ -73,6 +118,7 @@ html, body {
 
 .search {
   width: 1140px;
+  position: relative;
 }
 
 .search-inp {
@@ -153,6 +199,19 @@ html, body {
           align-items: center;
 }
 
+.search-company__title-verif {
+  display: block;
+  position: relative;
+}
+
+.search-company__title-verif:hover {
+  cursor: pointer;
+}
+
+.search-company__title-verif:hover ~ .verif__open {
+  display: block;
+}
+
 .search-company__title-main {
   margin: 0 0 0 10px;
   font-size: 32px;
@@ -203,6 +262,49 @@ html, body {
   cursor: pointer;
   color: #fff;
   background: #00C346;
+}
+
+.search .verif__open {
+  position: absolute;
+  display: none;
+  top: 150px;
+  width: 290px;
+  height: 120px;
+  background: #fff;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search .verif-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search .verif-title p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #212121;
+}
+
+.search .verif-info {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #424242;
 }
 
 .company {
@@ -372,6 +474,24 @@ html, body {
   line-height: 20px;
 }
 
+.company-info__txt-desc {
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+
+.company-info__txt-more, .company-info__txt-less {
+  color: #005fae;
+}
+
+.company-info__txt-more:hover, .company-info__txt-less:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .company-info__txt-cap {
   font-weight: bold;
 }
@@ -383,4 +503,48 @@ html, body {
 
 .company-info__txt li {
   list-style-type: none;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
 }
