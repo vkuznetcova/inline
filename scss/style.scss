@@ -384,7 +384,6 @@ html, body {
 }
 
 
-
 @media (max-width: 1366px) {
   .container{
     width: 1280px;
@@ -415,9 +414,7 @@ html, body {
       padding: 0;
     }
   }
-
 }
-
 
 @media (max-width: 1024px) {
   .advertising{
@@ -452,9 +449,7 @@ html, body {
       }
     }
   }
-  
 }
-
 
 @media (max-width: 768px) {
   .search{
@@ -468,6 +463,9 @@ html, body {
     &-main{
       order: 2;
       width: 100%;
+    }
+    &-ads{
+      overflow-x: auto;
     }
     &-info{
       order: 1;
@@ -488,7 +486,6 @@ html, body {
     }
   }
 }
-
 
 @media (max-width: 480px) {
   .container{
@@ -516,5 +513,4 @@ html, body {
       overflow-x: scroll;
     }
   }
-  
 }

@@ -581,6 +581,9 @@ html, body {
             order: 2;
     width: 100%;
   }
+  .company-ads {
+    overflow-x: auto;
+  }
   .company-info {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;

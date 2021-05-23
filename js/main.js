@@ -11,7 +11,6 @@ btnUp.onclick=()=>{
   });
 }
 
-
 var readMore = document.querySelector('.company-info__txt-more'),
     count = 0;
  readMore.onclick=()=>{
