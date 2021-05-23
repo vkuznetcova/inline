@@ -5,6 +5,7 @@ html, body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
 .header {
@@ -19,27 +20,8 @@ html, body {
   }
 }
 
-// .advertising {
-//   background: #fafafa;
-//   position: absolute;
-//   right: 0;
-//   // right: 160px;
-//   width: 160px;
-//   height: 320px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: #999999;
-//   font-size: 20px;
-//   &-1{
-//     top: 35px;
-//   }
-//   &-2{
-//     top: 380px;
-//   }
-// }
-
 .btn-up{
+  display: none;
   position: fixed;
   bottom: 24px;
   right: 24px;
@@ -82,6 +64,7 @@ html, body {
   width: 1366px;
 }
 .advertising {
+  z-index: 5;
   background: #fafafa;
   position: absolute;
   right: 0;
@@ -377,13 +360,9 @@ html, body {
       line-height: 20px;
       &-desc {
         margin: 0;
-        display: -webkit-box;
-        display: -moz-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 8;
-        overflow: hidden;
       }
-      &-more,&-less{
+      &-more{
+        display: none;
         color: $blue;
         &:hover{
           cursor: pointer;
@@ -405,63 +384,137 @@ html, body {
 }
 
 
-@media (min-width: 1281px) {
-  
-  /* CSS */
+
+@media (max-width: 1366px) {
+  .container{
+    width: 1280px;
+  }
+  .search, .company {
+    width: 1080px;
+  }
+  .company{
+    &-info{
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .advertising{
+    right: -50px;
+  }
+  .container{
+    width: 1024px;
+  }
+  .search, .company {
+    width: 864px;
+  }
+  .company-ads__table td{
+    padding: 8px 5px;
+    &:nth-child(3){
+      padding: 0;
+    }
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+  .advertising{
+    display: none;
+  }
+  .visible{
+    display: block;
+  }
+  .container{
+    width: 100%;
+  }
+  .search, .company {
+    width: 100%;
+  }
+  .company{
+    &-info{
+      &__txt{
+        &-desc {
+          display: -webkit-box;
+          display: -moz-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 8;
+          overflow: hidden;
+          &.active{
+            -webkit-line-clamp: unset;
+            overflow: auto;
+          }
+        }
+        &-more{
+          display: block;
+        }
+      }
+    }
+  }
   
 }
 
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-  
-  /* CSS */
-  
+@media (max-width: 768px) {
+  .search{
+    &-list{
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+  .company{
+    flex-wrap: wrap;
+    &-main{
+      order: 2;
+      width: 100%;
+    }
+    &-info{
+      order: 1;
+      width: 100%;
+      margin: 0;
+      border: 1px solid #F0F0F0;
+      &__txt{
+        &-desc {
+          -webkit-line-clamp: 4;
+        }
+      }
+      img{
+        float: right;
+      }
+      &__wrp{
+        background: #fff;
+      }
+    }
+  }
 }
 
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
-  
-  /* CSS */
+@media (max-width: 480px) {
+  .container{
+    padding: 16px;
+  }
+  .search{
+    &-list{
+      justify-content: center;
+    }
+    &-btn{
+      margin-top: 25px;
+    }
+    &-company{
+      justify-content: center;
+      &__title{
+        margin-top: 20px;
+        &-main{
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .company{
+    &-ads{
+      overflow-x: scroll;
+    }
+  }
   
 }
